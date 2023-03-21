@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+<!------------------------------->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!--Stylesheet-->
+    <style media="screen">
+      
+    </style>
+    <title>Shopping List App</title>
+</head>
+
+<body>
+    <template id="sign-up-template">
+        <div id="sign-up-page" class="limiter page">
+            <div class="container-login100" style="background-image: url('images/Back.jpg');">
+                <div class="wrap-login100 p-l-55 p-r-55 p-t-30 p-b-45">
+                    <form class="login100-form validate-form"
+                        onsubmit="return validateNewUser('sign-up-page', 'shoping-list-template')">
+                        <span class="login100-form-title p-b-40">
+                            הרשמה
+                        </span>
+                        <p id="wrong-input" style="display: none;"></p>
+
+                        <div class="wrap-input100 validate-input m-b-15" data-validate="Username is reauired">
+                            <span class="label-input100">שם מלא</span>
+                            <input class="input100" id="full-name" type="text" placeholder="הכנס שם מלא" required>
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-15" data-validate="Username is reauired">
+                            <span class="label-input100">מייל</span>
+                            <input class="input100 form__input" id="user-email" type="email" 
+                                placeholder="הכנס מייל" required>
+                            <span class="focus-input100"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input m-b-15" data-validate="Password is required">
+                            <span class="label-input100">סיסמא</span>
+                            <input class="input100" id="password1" type="password" placeholder="הכנס סיסמא" required>
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-20" data-validate="Password is required">
+                            <span class="label-input100">אימות סיסמא</span>
+                            <input class="input100" id="validation-password" type="password" placeholder="אימות סיסמא"
+                                required>
+                            <span class="focus-input100"></span>
+                        </div>
+                        <div class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn">
+                                <div class="login100-form-bgbtn"></div>
+                                <button id="sign-up-btn" type="submit" class="login100-form-btn"
+                                    data-target="shoping-list-page" href="#">
+                                    הירשם
+                                </button>
+                            </div>
+                            <!-- onclick="switchTemplate('sign-up-page', 'shoping-list-template')" -->
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="log-in-template" href="#log-in-template">
+        <div id="log-in-page" class="limiter page">
+            <div class="container-login100" style="background-image: url('images/Back.jpg');">
+                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                    <form class="login100-form validate-form"
+                        onsubmit="return validateUser('log-in-page', 'shoping-list-template')">
+                        <span class="login100-form-title p-b-49">
+                            התחברות
+                        </span>
+                        <p id="wrong-input2" style="display: none;">אחד מהפרטים שהוזנו שגויים</p>
+                        <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+                            <span class="label-input100">כתובת מייל</span>
+                            <input class="input100" id="user-email2" type="email" placeholder="הכנס כתובת מייל" required>
+                            <span class="focus-input100" data-symbol="&#xf206;"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <span class="label-input100">סיסמא</span>
+                            <input class="input100" id="password2" type="password" placeholder="הכנס סיסמא" required>
+                            <span class="focus-input100" data-symbol="&#xf190;"></span>
+                        </div>
+
+                        <div class="text-right p-t-8 p-b-31">
+                            <a href="#">
+                            </a>
+                        </div>
+                        <div class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn">
+                                <div class="login100-form-bgbtn"></div>
+                                <button id="log-in-btn" class="login100-form-btn" data-target="shoping-list-page">
+                                    <!-- onclick="switchTemplate('log-in-page', 'shoping-list-template')"  -->
+
+                                    התחברות
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex-col-c p-t-10">
+                            <span class="txt1 p-b-17">
+                                משתמש חדש?
+                            </span>
+                            <a id="new-user-link" onclick="switchTemplate('log-in-page', 'sign-up-template')"
+                                class="txt2" data-target="sign-up-page">
+                                הירשם
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="shoping-list-template">
+        <div id="shoping-list-page" class="page" data-target="shoping-list-page">
+        <link rel="stylesheet" href="./css/shoppingList.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+        
+        <main>
+            <div class="header">
+      
+      <div class="logOut">
+        <button class="logOutBt"><i class="fa fa-user-times" onclick="signOut()"></i></button>
+        
+    </div>
+    <div class="nameDiv">
+    <h4 class="nameUser">name</h4>
+    </div>
+    </div>
+            <div class="all-shopping-lists">
+                
+                <ul id="list-name-bar">
+                    
+    
+                </ul>
+                <button id="addListBtn" onclick="addNewList()">הוסף רשימה</button>
+            </div>
+            <i class="fa-solid fa-plus" id="addListIcon" onclick="addNewList()"></i>
+        <div class="container hide">
+            <input type="text"  value="רשימה1" id="list-name" onfocusout="changeListName()">
+            <div id="newtask">
+                <input class="new-task-input" type="text" placeholder="הוסף מוצר" >
+                <input class="new-task-count" type="number" value="1" min="1">
+    
+                <button id="push"  onclick="AddItem()">הוסף </button>
+            </div>
+            <div class="shopping-item-header">
+                <span class="item-name">שם המוצר
+                </span>
+                <span class="item-count">כמות </span>
+                
+            </div>
+            <div id="wrapper">
+            <div id="tasks">
+                
+            </div>
+        </div>
+        </div>
+    </main>
+    <!-- <script src="./js/product.js"></script>
+    <script src="./js/User.js"></script>
+    <script src="./js/ShoppingList.js"></script>
+    <script src="./js/server.js"></script>
+        <script src="./js/db.js"></script>
+    <script src="./js/network.js"></script>
+    <script src="./js/fajax.js"></script>
+        <script src="./js/client.js"></script>
+    
+        
+        <script src="./js/log-in.js"></script>
+         -->
+        <script>
+            loadPage();
+        </script>
+        <script src="https://kit.fontawesome.com/89b91e2a64.js" crossorigin="anonymous"></script>
+    
+            
+        </div>
+    </template>
+    <script src="./js/spa.js"></script>
+    <script src="./js/server.js"></script>
+    <script src="./js/db.js"></script>
+    <script src="./js/log-in.js"></script>
+    <script src="./js/fajax.js"></script>
+    <script src="./js/network.js"></script>
+    <script src="./js/User.js"></script>
+    <script src="./js/product.js"></script>
+    <script src="./js/ShoppingList.js"></script>
+    <script src="./js/client.js"></script> 
+
+    <!-- <script src="./js/signUp.js"></script>
+    <script src="./js/login.js"></script> -->
+    <!-- <script>$(window).unload(function () {
+            $.cookies.del('myCookie');
+        });</script> -->
+
+</body>
+
+</html>
